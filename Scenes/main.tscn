@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c4awxk84isb0m"]
+
+[ext_resource type="Script" uid="uid://gy6p3q2xtmyb" path="res://Scripts/CardManager.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cripvxtgeyoiv" path="res://Scenes/cardslot.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cvkrh38kt2fi0" path="res://AI_Temp_Sprites/Background_AI_Temp.png" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dxb88j88miytf" path="res://Scripts/PlayerHand.gd" id="5_lquwl"]
+
+[node name="Main" type="Node2D" unique_id=1460262112]
+
+[node name="CardManager" type="Node2D" parent="." unique_id=1234423206]
+script = ExtResource("1_0xm2m")
+
+[node name="CardSlot" parent="." unique_id=1792929784 instance=ExtResource("3_h2yge")]
+position = Vector2(1003, 534)
+
+[node name="BackgroundAiTemp" type="Sprite2D" parent="." unique_id=396881735]
+z_index = -5
+position = Vector2(1002.00006, 543)
+scale = Vector2(1.2009977, 1.2009977)
+texture = ExtResource("4_1bvp3")
+
+[node name="PlayerHand" type="Node2D" parent="." unique_id=1651074575]
+script = ExtResource("5_lquwl")
