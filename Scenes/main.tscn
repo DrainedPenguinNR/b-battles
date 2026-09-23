@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://c4awxk84isb0m"]
 
 [ext_resource type="Script" uid="uid://gy6p3q2xtmyb" path="res://Scripts/CardManager.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://beut648sp76gn" path="res://Scripts/gridmanager.gd" id="1_21xkr"]
 [ext_resource type="PackedScene" uid="uid://cripvxtgeyoiv" path="res://Scenes/cardslot.tscn" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://cvkrh38kt2fi0" path="res://AI_Temp_Sprites/Background_AI_Temp.png" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dex3ev6hiug86" path="res://Scenes/knightunit.tscn" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://dxb88j88miytf" path="res://Scripts/PlayerHand.gd" id="5_lquwl"]
 
 [node name="Main" type="Node2D" unique_id=1460262112]
+
+[node name="GridManager" type="Node2D" parent="." unique_id=635520679]
+script = ExtResource("1_21xkr")
 
 [node name="CardManager" type="Node2D" parent="." unique_id=1234423206]
 script = ExtResource("1_0xm2m")
@@ -21,3 +26,24 @@ texture = ExtResource("4_1bvp3")
 
 [node name="PlayerHand" type="Node2D" parent="." unique_id=1651074575]
 script = ExtResource("5_lquwl")
+
+[node name="KnightUnit" parent="." unique_id=1680006408 instance=ExtResource("5_kry3j")]
+position = Vector2(987, 876)
+
+[node name="UnitManager" type="Node2D" parent="." unique_id=1432515557]
+
+[node name="Team1" type="Node2D" parent="UnitManager" unique_id=206718173]
+
+[node name="KnightList" type="Node2D" parent="UnitManager/Team1" unique_id=389534493]
+
+[node name="ArcherList" type="Node2D" parent="UnitManager/Team1" unique_id=399318309]
+
+[node name="ChaffList" type="Node2D" parent="UnitManager/Team1" unique_id=1609920222]
+
+[node name="Team2" type="Node2D" parent="UnitManager" unique_id=1409569147]
+
+[node name="KnightList" type="Node2D" parent="UnitManager/Team2" unique_id=1731543992]
+
+[node name="ArcherList" type="Node2D" parent="UnitManager/Team2" unique_id=2061364553]
+
+[node name="ChaffList" type="Node2D" parent="UnitManager/Team2" unique_id=392369948]

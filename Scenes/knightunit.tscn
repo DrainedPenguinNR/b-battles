@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dex3ev6hiug86"]
+
+[ext_resource type="Texture2D" uid="uid://cvcncqduluv2q" path="res://AI_Temp_Sprites/Knight_AI_Temp.png" id="1_7c14y"]
+[ext_resource type="Script" uid="uid://db5ys6bnkcxsk" path="res://Scripts/Unit.gd" id="1_a50bt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(27, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(100, 98)
+
+[node name="KnightUnit" type="Node2D" unique_id=1680006408]
+script = ExtResource("1_a50bt")
+
+[node name="KnightAiTemp" type="Sprite2D" parent="." unique_id=1335086624]
+position = Vector2(0, -10.999999)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_7c14y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=416347090]
+position = Vector2(1, -4)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="AttackRange" type="Area2D" parent="." unique_id=1566293130]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange" unique_id=29115051]
+position = Vector2(1, -4)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[connection signal="area_entered" from="AttackRange" to="." method="_on_attack_range_area_entered"]
+[connection signal="area_exited" from="AttackRange" to="." method="_on_attack_range_area_exited"]

@@ -2,6 +2,7 @@ extends Node2D
 
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_CARD_SLOT = 2
+const SCALE_MODIFIER = 1.25
 
 var card_slot
 var card_being_dragged
@@ -98,10 +99,12 @@ func on_hovered_off_card(card):
 
 func highlight_card(card, hovered):
 	if hovered:
-		card.scale = Vector2(1.25, 1.25)
+		var tween = get_tree().create_tween()
+		tween.tween_property(card, "scale", Vector2(SCALE_MODIFIER, SCALE_MODIFIER), 0.1)
 		card.z_index = 2
 	else:
-		card.scale = Vector2(1, 1)
+		var tween = get_tree().create_tween()
+		tween.tween_property(card, "scale", Vector2(1, 1), 0.1)
 		card.z_index = 1
 
 func get_card_with_highest_z_index(cards):
