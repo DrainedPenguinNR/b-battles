@@ -5,11 +5,13 @@ extends Node2D
 @export var health = 1
 @export var max_health = 10
 @export var attack_speed = 1
+@export var speed = 100
 
 var attack_range
-var current_pos
+var current_pos = Vector2(0,0)
 var fighting = false
 var in_range = false
+var is_moving = false
 
 func _ready() -> void:
 	attack_range = $AttackRange
@@ -30,7 +32,7 @@ func seek_enemy():
 	pass
 
 func move(delta):
-	pass
+	position = position.move_toward(current_pos, speed * delta)
 
 func _on_attack_range_area_entered(area: Area2D) -> void:
 	var self_team = get_team(self)

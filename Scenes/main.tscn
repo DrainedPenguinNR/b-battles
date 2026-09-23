@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4awxk84isb0m"]
 
 [ext_resource type="Script" uid="uid://gy6p3q2xtmyb" path="res://Scripts/CardManager.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dnoi0smbehvql" path="res://Scenes/debug_manager.gd" id="1_6bp64"]
 [ext_resource type="Script" uid="uid://beut648sp76gn" path="res://Scripts/gridmanager.gd" id="1_21xkr"]
 [ext_resource type="PackedScene" uid="uid://cripvxtgeyoiv" path="res://Scenes/cardslot.tscn" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://cvkrh38kt2fi0" path="res://AI_Temp_Sprites/Background_AI_Temp.png" id="4_1bvp3"]
@@ -8,6 +9,9 @@
 [ext_resource type="Script" uid="uid://dxb88j88miytf" path="res://Scripts/PlayerHand.gd" id="5_lquwl"]
 
 [node name="Main" type="Node2D" unique_id=1460262112]
+
+[node name="DebugManager" type="Node2D" parent="." unique_id=1536120734]
+script = ExtResource("1_6bp64")
 
 [node name="GridManager" type="Node2D" parent="." unique_id=635520679]
 script = ExtResource("1_21xkr")
