@@ -1,15 +1,15 @@
-[gd_scene format=3 uid="uid://yp1wcraq7hsh"]
+[gd_scene format=3 uid="uid://dkmcnqf2j2s5n"]
 
-[ext_resource type="Script" uid="uid://db5ys6bnkcxsk" path="res://Scripts/Unit.gd" id="1_453t6"]
-[ext_resource type="Texture2D" uid="uid://cvcncqduluv2q" path="res://AI_Temp_Sprites/Knight_AI_Temp.png" id="1_jjmwf"]
+[ext_resource type="Texture2D" uid="uid://d02x7tde7e471" path="res://AI_Temp_Sprites/Archer_AI_Temp.png" id="1_213wj"]
+[ext_resource type="Script" uid="uid://db5ys6bnkcxsk" path="res://Scripts/Unit.gd" id="1_vpftk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpftk"]
 size = Vector2(22, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6bp64"]
-radius = 48.582405
+[sub_resource type="CircleShape2D" id="CircleShape2D_b2r8t"]
+radius = 195.00064
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_453t6"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_n36sn"]
 radius = 13.601471
 
 [sub_resource type="Animation" id="Animation_453t6"]
@@ -206,7 +206,7 @@ tracks/3/keys = {
 "values": [-0.10995574, -0.23212879051524604, 0.2321287905152458]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_x50h8"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m530c"]
 _data = {
 &"RESET": SubResource("Animation_453t6"),
 &"die": SubResource("Animation_55ju4"),
@@ -214,39 +214,37 @@ _data = {
 &"run": SubResource("Animation_x50h8")
 }
 
-[node name="KnightUnit" type="CharacterBody2D" unique_id=1276449820]
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("1_453t6")
-max_health = 5
-metadata/_edit_horizontal_guides_ = [-936.0]
+[node name="ArcherUnit" type="CharacterBody2D" unique_id=181493427]
+script = ExtResource("1_vpftk")
+attack_damage = 2
+max_health = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1860965044]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=38605818]
 position = Vector2(0, -10.999999)
 scale = Vector2(0.04, 0.04)
-texture = ExtResource("1_jjmwf")
+texture = ExtResource("1_213wj")
 
-[node name="HitBox" type="Area2D" parent="." unique_id=1144270694]
+[node name="HitBox" type="Area2D" parent="." unique_id=1930674852]
 collision_layer = 128
 collision_mask = 128
 
-[node name="HitBox" type="CollisionShape2D" parent="HitBox" unique_id=984345568]
+[node name="HitBox" type="CollisionShape2D" parent="HitBox" unique_id=246428841]
 position = Vector2(0, -8)
-shape = SubResource("RectangleShape2D_g4v7s")
+shape = SubResource("RectangleShape2D_vpftk")
 
-[node name="AttackRange" type="Area2D" parent="." unique_id=2111345350]
+[node name="AttackRange" type="Area2D" parent="." unique_id=89028854]
 collision_layer = 4
 collision_mask = 128
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange" unique_id=246374110]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange" unique_id=2079222353]
 position = Vector2(0, -8.5)
-shape = SubResource("CircleShape2D_6bp64")
+shape = SubResource("CircleShape2D_b2r8t")
 
-[node name="Collider" type="CollisionShape2D" parent="." unique_id=1340877550]
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=1104366532]
 position = Vector2(1, -5)
-shape = SubResource("CircleShape2D_453t6")
+shape = SubResource("CircleShape2D_n36sn")
 
-[node name="AttackTimer" type="Timer" parent="." unique_id=1517468971]
+[node name="AttackTimer" type="Timer" parent="." unique_id=922118267]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1966335713]
-libraries/ = SubResource("AnimationLibrary_x50h8")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=932800351]
+libraries/ = SubResource("AnimationLibrary_m530c")

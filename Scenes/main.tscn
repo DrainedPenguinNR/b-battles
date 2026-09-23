@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://c4awxk84isb0m"]
 
 [ext_resource type="Script" uid="uid://gy6p3q2xtmyb" path="res://Scripts/CardManager.gd" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://dnoi0smbehvql" path="res://Scenes/debug_manager.gd" id="1_6bp64"]
+[ext_resource type="Script" uid="uid://dnoi0smbehvql" path="res://debug_manager.gd" id="1_6bp64"]
 [ext_resource type="Script" uid="uid://beut648sp76gn" path="res://Scripts/gridmanager.gd" id="1_21xkr"]
 [ext_resource type="PackedScene" uid="uid://cripvxtgeyoiv" path="res://Scenes/cardslot.tscn" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://cvkrh38kt2fi0" path="res://AI_Temp_Sprites/Background_AI_Temp.png" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://dex3ev6hiug86" path="res://Scenes/knightunit.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://yp1wcraq7hsh" path="res://Scenes/knightunit.tscn" id="5_kry3j"]
 [ext_resource type="Script" uid="uid://dxb88j88miytf" path="res://Scripts/PlayerHand.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://d3rcy0oykai5s" path="res://Scripts/UnitManager.gd" id="8_344ge"]
+[ext_resource type="PackedScene" uid="uid://dkmcnqf2j2s5n" path="res://Scenes/ArcherUnit.tscn" id="9_ynf5e"]
 
 [node name="Main" type="Node2D" unique_id=1460262112]
 
@@ -35,6 +37,7 @@ script = ExtResource("5_lquwl")
 position = Vector2(987, 876)
 
 [node name="UnitManager" type="Node2D" parent="." unique_id=1432515557]
+script = ExtResource("8_344ge")
 
 [node name="Team1" type="Node2D" parent="UnitManager" unique_id=206718173]
 
@@ -51,3 +54,5 @@ position = Vector2(987, 876)
 [node name="ArcherList" type="Node2D" parent="UnitManager/Team2" unique_id=2061364553]
 
 [node name="ChaffList" type="Node2D" parent="UnitManager/Team2" unique_id=392369948]
+
+[node name="ArcherUnit" parent="." unique_id=181493427 instance=ExtResource("9_ynf5e")]
